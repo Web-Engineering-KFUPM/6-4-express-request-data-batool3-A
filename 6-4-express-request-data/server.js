@@ -110,7 +110,9 @@ import express from 'express';
 // create express app instance to create web server
 const app = express();
 app.listen(3000, ()=> console.log("API running at http://localhost:3000"));
-
+app.get("/", (req, res) => {
+  res.send("server up");
+});
 
 // Query params: /echo?name=Ali&age=22
 app.get("/echo", (req, res) => {
